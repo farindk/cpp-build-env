@@ -4,6 +4,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git cmake gcc g++ zlib1g-d
   qtbase5-dev qtmultimedia5-dev libqt5opengl5-dev libqt5svg5-dev qtconnectivity5-dev libcurl4-openssl-dev libpugixml-dev
 RUN git clone https://github.com/farindk/xlnt.git && \
     cd xlnt && \
+    git submodule init && \
+    git submodule update && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_INSTALL_PREFIX=/usr .. && \
